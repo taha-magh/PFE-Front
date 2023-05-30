@@ -1,0 +1,28 @@
+<div class="kt-portlet__body">
+	<div class="row">
+		<mat-radio-group (change)="selectionChanged($event)">
+			<mat-radio-button [checked]="true" value="pie">
+				<i class="flaticon2-pie-chart-1"></i>
+			</mat-radio-button>
+			<mat-radio-button value="doughnut">
+				<i class="flaticon2-pie-chart-2"></i>
+			</mat-radio-button>
+			<mat-radio-button value="bar">
+				<i class="flaticon2-poll-symbol"></i>
+			</mat-radio-button>
+			<mat-radio-button value="line">
+				<i class="flaticon2-analytics"></i>
+			</mat-radio-button>
+		</mat-radio-group>
+	</div>
+	<br />
+	<div class="row">
+		<div class="col-md-12 show_port">
+			<div class="col-md-12 show_port">
+				<div Style="pointer-events: none;">
+					<canvas id="canvas2"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

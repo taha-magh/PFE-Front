@@ -1,0 +1,142 @@
+<!--begin::Form-->
+
+<div autocomplete="off">
+	<!-- {{addForm.value |json}} -->
+	<div class="kt-portlet portlet-3">
+		<div class="kt-portlet__head kt-bg-portlet-3">
+			<div class="kt-portlet__head-label">
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					Imprimer l'attestation de congé
+				</h2>
+			</div>
+		</div>
+	</div>
+	<div class="kt-portlet__body">
+		<div class="row d-flex justify-content-center">
+			<div class="col-md-5">
+				<table class="table">
+					<tbody>
+						<tr>
+							<th>
+								<mat-checkbox
+									[checked]="true"
+									class="example-margin"
+									disabled
+									>Type :</mat-checkbox
+								>
+							</th>
+							<td class="donnee_show">aaaa</td>
+						</tr>
+						<tr>
+							<th>
+								<mat-checkbox
+									[checked]="true"
+									class="example-margin"
+									disabled
+									>Nombre de jours :</mat-checkbox
+								>
+							</th>
+							<td class="donnee_show">aaaa</td>
+						</tr>
+
+						<tr>
+							<th>
+								<mat-checkbox
+									[checked]="true"
+									class="example-margin"
+									disabled
+									>Date de fin :</mat-checkbox
+								>
+							</th>
+							<td class="donnee_show">aaaa</td>
+						</tr>
+						<tr>
+							<th>
+								<mat-checkbox
+									[checked]="true"
+									class="example-margin"
+									disabled
+									>Pièces Jointes :</mat-checkbox
+								>
+							</th>
+							<td class="donnee_show">aaaa</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="col-md-5">
+				<table class="table">
+					<tbody>
+						<tr>
+							<th>
+								<mat-checkbox
+									[checked]="true"
+									class="example-margin"
+									disabled
+									>Motif :</mat-checkbox
+								>
+							</th>
+							<td class="donnee_show">aaaa</td>
+						</tr>
+						<tr>
+							<th>
+								<mat-checkbox
+									[checked]="true"
+									class="example-margin"
+									disabled
+									>Date de début :</mat-checkbox
+								>
+							</th>
+							<td class="donnee_show">aaaa</td>
+						</tr>
+
+						<tr>
+							<th>
+								<mat-checkbox
+									[checked]="true"
+									class="example-margin"
+									disabled
+									>Remarque :</mat-checkbox
+								>
+							</th>
+							<td class="donnee_show">aaaa</td>
+						</tr>
+						<tr>
+							<th>
+								<mat-checkbox
+									[checked]="true"
+									class="example-margin"
+									disabled
+									>Statut :</mat-checkbox
+								>
+							</th>
+							<td class="donnee_show">Validée</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="kt-portlet__heads">
+		<div class="kt-portlet__head-label mr-5" align="right">
+			<button
+				mat-button
+				(click)="EtapeDernier()"
+				type="button"
+				class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+			>
+				<i class="la la-recycle"></i>
+				Retour
+			</button>
+			<button
+				mat-button
+				type="button"
+				class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+			>
+				<i class="fa fa-print"></i>
+				Imprimer
+			</button>
+		</div>
+	</div>
+</div>

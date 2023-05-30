@@ -1,0 +1,628 @@
+<div class="kt-portlet portlet-3">
+	<div class="kt-portlet__head kt-bg-portlet-3">
+		<div class="kt-portlet__head-label">
+			<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+				Modifier le concours
+			</h2>
+		</div>
+	</div>
+</div>
+<mat-horizontal-stepper #stepper>
+	<mat-step label="Etape 1">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Numéro </label>
+						<input
+							matInput
+							value="1"
+							type="text"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Type </label>
+						<input
+							matInput
+							value="sample text"
+							type="text"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Date de publication </label>
+						<input
+							matInput
+							value="2022-10-21"
+							type="date"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Date de fin de la publication </label>
+						<input
+							matInput
+							value="2022-11-21"
+							type="date"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label>
+							Date de depot de la demande de candidature
+						</label>
+						<input
+							matInput
+							value="2022-07-21"
+							type="date"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<div class="input-group date">
+						<mat-form-field class="example-full-width">
+							<label> Date début concours </label>
+							<input
+								matInput
+								value="2022-09-21"
+								type="date"
+								class="form-control"
+								placeholder=""
+							/>
+						</mat-form-field>
+					</div>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Date fin concours </label>
+						<input
+							matInput
+							value="2022-10-02"
+							type="date"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<div class="input-group date">
+						<mat-form-field class="example-full-width">
+							<label> Lieu du concours écrit </label>
+							<input
+								matInput
+								value="sample text"
+								type="text"
+								class="form-control"
+								placeholder=""
+							/>
+						</mat-form-field>
+					</div>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="kt-portlet__heads">
+			<div class="kt-portlet__head-label" align="right">
+				<button
+					mat-button
+					(click)="EtapeDernier()"
+					type="button"
+					class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+				>
+					<i class="la la-recycle"></i>
+					Retour
+				</button>
+				<button
+					mat-button
+					matStepperNext
+					type="button"
+					class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+				>
+					<i class="fa fa-plus-circle"></i>
+					Suivant
+				</button>
+			</div>
+		</div>
+	</mat-step>
+	<mat-step label="Etape 2">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Personnes éligibles : Liste personnel </label>
+						<input
+							matInput
+							value="1"
+							type="text"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label>
+							Commisions de sélection : Liste Personnel
+						</label>
+						<input
+							matInput
+							value="sample text"
+							type="text"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Personnes inscrits : Liste Personnel </label>
+						<input
+							matInput
+							value="sample text"
+							type="text"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Employé sélectionnés </label>
+						<input
+							matInput
+							value="sample text"
+							type="text"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Adresse </label>
+						<input
+							matInput
+							value="sample text"
+							type="text"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<div class="input-group date">
+						<mat-form-field class="example-full-width">
+							<label>
+								Commisions de suivi et de supervision : Liste
+								Personnel
+							</label>
+							<input
+								value="sample text"
+								matInput
+								type="text"
+								class="form-control"
+								placeholder=""
+							/>
+						</mat-form-field>
+					</div>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label>
+							Commissions d'examen administrative et technique :
+							Liste Personnel
+						</label>
+						<input
+							value="sample text"
+							matInput
+							type="text"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<div class="input-group date">
+						<mat-form-field class="example-full-width">
+							<label> PV commission résultats écrit </label>
+							<input
+								value="sample text"
+								matInput
+								type="text"
+								class="form-control"
+								placeholder=""
+							/>
+						</mat-form-field>
+					</div>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Employés admis en écrit </label>
+						<input
+							value="sample text"
+							matInput
+							type="text"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<div class="input-group date">
+						<mat-form-field class="example-full-width">
+							<label>
+								Date publication des résultats de l'écrit
+							</label>
+							<input
+								value="2021-03-11"
+								matInput
+								type="date"
+								class="form-control"
+								placeholder=""
+							/>
+						</mat-form-field>
+					</div>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="kt-portlet__heads">
+			<div class="kt-portlet__head-label" align="right">
+				<button
+					mat-button
+					matStepperPrevious
+					type="button"
+					class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+				>
+					<i class="la la-recycle"></i>
+					Retour
+				</button>
+				<!-- <button
+					mat-button
+					type="button"
+					class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+				>
+					<i class="icon la la-floppy-o"></i>
+					Enregistrer
+				</button> -->
+				<button
+					mat-button
+					matStepperNext
+					type="button"
+					class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+				>
+					<i class="fa fa-plus-circle"></i>
+					Suivant
+				</button>
+			</div>
+		</div>
+	</mat-step>
+	<mat-step label="Etape 3">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Date début oral </label>
+						<input
+							value="2021-03-11"
+							matInput
+							type="date"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Date fin oral </label>
+						<input
+							value="2021-03-11"
+							matInput
+							type="date"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Lieu de l'examen oral </label>
+						<input
+							value="sample text"
+							matInput
+							type="text"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Adresse </label>
+						<input
+							value="sample text"
+							matInput
+							type="text"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Commission de l'oral </label>
+						<input
+							value="sample text"
+							matInput
+							type="text"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<div class="input-group date">
+						<mat-form-field class="example-full-width">
+							<label> PV commission résultats finaux </label>
+							<input
+								value="sample text"
+								matInput
+								type="text"
+								class="form-control"
+								placeholder=""
+							/>
+						</mat-form-field>
+					</div>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label>
+							Date publication des résultats de l'oral
+						</label>
+						<input
+							value="2022-09-06"
+							matInput
+							type="date"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<div class="input-group date">
+						<mat-form-field class="example-full-width">
+							<label> Personnes admis en oral </label>
+							<input
+								value="sample text"
+								matInput
+								type="text"
+								class="form-control"
+								placeholder=""
+							/>
+						</mat-form-field>
+					</div>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Commission final </label>
+						<input
+							value="sample text"
+							matInput
+							type="text"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<div class="input-group date">
+						<mat-form-field class="example-full-width">
+							<label> PV commission résultats finaux </label>
+							<input
+								value="sample text"
+								matInput
+								type="text"
+								class="form-control"
+								placeholder=""
+							/>
+						</mat-form-field>
+					</div>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Date publication des résultats finaux </label>
+						<input
+							value="2022-06-23"
+							matInput
+							type="date"
+							class="form-control"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+		</div>
+		<div class="kt-portlet">
+			<div class="kt-portlet__head kt-bg-portlet-5">
+				<div class="kt-portlet__head-label">
+					<span class="kt-portlet__head-icon">
+						<i class="flaticon-attachment"></i>
+					</span>
+					&nbsp;
+					<h3 class="kt-portlet__head-title">Piéces Jointes</h3>
+				</div>
+			</div>
+			<div class="kt-portlet__body">
+				<div class="row">
+					<div class="col-md-6 show_port input-group">
+						<form
+							enctype="multipart/form-data"
+							method="POST"
+							style="
+								display: -webkit-inline-box;
+								margin-inline-start: 98px;
+							"
+						>
+							<label class="input-group-btn">
+								<span class="btn btn-info">
+									selectionner un fichier
+									<input
+										type="file"
+										name="file"
+										formControlName="_file"
+										id="customFile"
+										style="display: none"
+										multiple
+									/>
+								</span>
+							</label>
+							<input type="text" class="form-control" readonly />
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="kt-portlet__heads">
+			<div class="kt-portlet__head-label" align="right">
+				<button
+					mat-button
+					matStepperPrevious
+					type="button"
+					class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+				>
+					<i class="la la-recycle"></i>
+					Retour
+				</button>
+				<button
+					mat-button
+					type="button"
+					class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+				>
+					<i class="icon la la-floppy-o"></i>
+					Enregistrer
+				</button>
+			</div>
+		</div>
+	</mat-step>
+</mat-horizontal-stepper>

@@ -1,0 +1,216 @@
+<!--begin::Form-->
+<!-- <div novalidate [formGroup]="addForm" autocomplete="off"></div> -->
+<div autocomplete="off">
+	<!-- {{addForm.value |json}} -->
+	<div class="kt-portlet portlet-3">
+		<div class="kt-portlet__head kt-bg-portlet-3">
+			<div class="kt-portlet__head-label">
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					Ajouter un événement
+				</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group fv-plugins-icon-container">
+				<mat-form-field class="example-full-width">
+					<label> Num événement </label>
+					<input
+						matInput
+						type="text"
+						class="form-control"
+						placeholder=""
+					/>
+				</mat-form-field>
+				<div class="fv-plugins-message-container"></div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group fv-plugins-icon-container">
+				<mat-form-field class="example-full-width">
+					<label> Date d'événement </label>
+					<input
+						matInput
+						type="date"
+						class="form-control"
+						placeholder=""
+					/>
+				</mat-form-field>
+				<div class="fv-plugins-message-container"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group fv-plugins-icon-container">
+				<mat-form-field class="example-full-width">
+					<label>Type d'événement : </label>
+					<mat-select class="form-control">
+						<mat-option [value]="''">type1</mat-option>
+						<mat-option [value]="''">type2</mat-option>
+						<mat-option [value]="''">type3</mat-option>
+					</mat-select>
+				</mat-form-field>
+				<div class="fv-plugins-message-container"></div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="form-group fv-plugins-icon-container">
+				<mat-form-field class="example-full-width">
+					<label> N° du matricule : </label>
+					<mat-select class="form-control">
+						<mat-option [value]="''">11233</mat-option>
+						<mat-option [value]="''">23221</mat-option>
+						<mat-option [value]="''">33211</mat-option>
+					</mat-select>
+				</mat-form-field>
+				<div class="fv-plugins-message-container"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group fv-plugins-icon-container date">
+				<mat-form-field class="example-full-width">
+					<label> Description : </label>
+					<input
+						matInput
+						type="text"
+						class="form-control form-control-solid form-control-lg"
+						name="address1"
+					/>
+				</mat-form-field>
+				<div class="fv-plugins-message-container"></div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="form-group fv-plugins-icon-container date">
+				<mat-form-field class="example-full-width">
+					<label>Action : </label>
+					<input
+						matInput
+						type="text"
+						class="form-control form-control-solid form-control-lg"
+						name="address1"
+					/>
+				</mat-form-field>
+				<div class="fv-plugins-message-container"></div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="form-group fv-plugins-icon-container date">
+				<mat-form-field class="example-full-width">
+					<label>Date de déclaration : </label>
+					<input
+						matInput
+						type="date"
+						class="form-control form-control-solid form-control-lg"
+						name="address1"
+					/>
+				</mat-form-field>
+				<div class="fv-plugins-message-container"></div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="form-group fv-plugins-icon-container date">
+				<mat-form-field class="example-full-width">
+					<label>Statut : </label>
+					<mat-select class="form-control">
+						<mat-option [value]="''">Payé</mat-option>
+						<mat-option [value]="''">Non payé</mat-option>
+					</mat-select>
+				</mat-form-field>
+				<div class="fv-plugins-message-container"></div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="form-group fv-plugins-icon-container date">
+				<mat-form-field class="example-full-width">
+					<label>Observation : </label>
+					<input
+						matInput
+						type="text"
+						class="form-control form-control-solid form-control-lg"
+						name="address1"
+					/>
+				</mat-form-field>
+				<div class="fv-plugins-message-container"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="pb-5" data-wizard-type="step-content">
+		<h4 class="mb-10 font-weight-bold text-dark"></h4>
+		<div class="kt-portlet">
+			<div class="kt-portlet__head kt-bg-portlet-5">
+				<div class="kt-portlet__head-label">
+					<span class="kt-portlet__head-icon">
+						<i class="flaticon-attachment"></i>
+					</span>
+					&nbsp;
+					<h3 class="kt-portlet__head-title">Piéces Jointes</h3>
+				</div>
+			</div>
+			<div class="kt-portlet__body">
+				<div class="row">
+					<div class="col-md-6 show_port input-group">
+						<form
+							enctype="multipart/form-data"
+							method="POST"
+							style="
+								display: -webkit-inline-box;
+								margin-inline-start: 98px;
+							"
+						>
+							<label class="input-group-btn">
+								<span class="btn btn-info">
+									selectionner un fichier
+									<input
+										type="file"
+										name="file"
+										formControlName="_file"
+										id="customFile"
+										style="display: none"
+										multiple
+									/>
+								</span>
+							</label>
+							<input type="text" class="form-control" readonly />
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="kt-portlet__heads">
+		<div class="kt-portlet__head-label" align="right">
+			<button
+				href="javascript:; "
+				(click)="EtapeDernier()"
+				_ngcontent-dkp-c41=""
+				class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+			>
+				<i _ngcontent-dkp-c41="" class="la la-recycle"></i>
+				Retour
+			</button>
+			<button
+				_ngcontent-dkp-c41=""
+				class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+				type="reset"
+			>
+				<i _ngcontent-dlp-c41 class="icon la la-floppy-o"></i>
+				Valider
+			</button>
+		</div>
+	</div>
+</div>

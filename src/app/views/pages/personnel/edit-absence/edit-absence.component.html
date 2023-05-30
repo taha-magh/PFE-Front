@@ -1,0 +1,172 @@
+<!--begin::Form-->
+<!-- <div novalidate [formGroup]="addForm" autocomplete="off"></div> -->
+<div autocomplete="off">
+	<!-- {{addForm.value |json}} -->
+	<div class="kt-portlet portlet-3">
+		<div class="kt-portlet__head kt-bg-portlet-3">
+			<div class="kt-portlet__head-label">
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					Modifier l'absence
+				</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group fv-plugins-icon-container">
+				<mat-form-field class="example-full-width">
+					<label> Date d'absence </label>
+					<input
+						value="2022-12-01"
+						matInput
+						type="date"
+						class="form-control"
+						placeholder=""
+					/>
+				</mat-form-field>
+				<div class="fv-plugins-message-container"></div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group fv-plugins-icon-container">
+				<mat-form-field class="example-full-width">
+					<label>Nombre de jours </label>
+					<input
+						value="sample text"
+						matInput
+						type="text"
+						class="form-control form-control-solid form-control-lg"
+						name="address1"
+					/>
+				</mat-form-field>
+				<div class="fv-plugins-message-container"></div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group fv-plugins-icon-container">
+				<mat-form-field class="example-full-width">
+					<label> Date de retour </label>
+					<input
+						value="2022-12-01"
+						matInput
+						type="date"
+						class="form-control"
+						placeholder=""
+					/>
+				</mat-form-field>
+				<div class="fv-plugins-message-container"></div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group fv-plugins-icon-container">
+				<mat-form-field class="example-full-width">
+					<label>Certifié/non certifié </label>
+					<input
+						value="sample text"
+						matInput
+						type="text"
+						class="form-control form-control-solid form-control-lg"
+						name="address1"
+					/>
+				</mat-form-field>
+				<div class="fv-plugins-message-container"></div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="form-group fv-plugins-icon-container">
+				<mat-form-field class="example-full-width">
+					<label> Remarque </label>
+					<input
+						value="sample text"
+						matInput
+						type="text"
+						class="form-control"
+						placeholder=""
+					/>
+				</mat-form-field>
+				<div class="fv-plugins-message-container"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="pb-5" data-wizard-type="step-content">
+		<h4 class="mb-10 font-weight-bold text-dark"></h4>
+		<div class="kt-portlet">
+			<div class="kt-portlet__head kt-bg-portlet-5">
+				<div class="kt-portlet__head-label">
+					<span class="kt-portlet__head-icon">
+						<i class="flaticon-attachment"></i>
+					</span>
+					&nbsp;
+					<h3 class="kt-portlet__head-title">Piéces Jointes</h3>
+				</div>
+			</div>
+			<div class="kt-portlet__body">
+				<div class="row">
+					<div class="col-md-6 show_port input-group">
+						<form
+							enctype="multipart/form-data"
+							method="POST"
+							style="
+								display: -webkit-inline-box;
+								margin-inline-start: 98px;
+							"
+						>
+							<label class="input-group-btn">
+								<span class="btn btn-info">
+									selectionner un fichier
+									<input
+										type="file"
+										name="file"
+										formControlName="_file"
+										id="customFile"
+										style="display: none"
+										multiple
+									/>
+								</span>
+							</label>
+							<input type="text" class="form-control" readonly />
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="kt-portlet__heads">
+		<div class="kt-portlet__head-label" align="right">
+			<button
+				href="javascript:; "
+				(click)="EtapeDernier()"
+				_ngcontent-dkp-c41=""
+				class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+			>
+				<i _ngcontent-dkp-c41="" class="la la-recycle"></i>
+				Retour
+			</button>
+
+			<button
+				href="javascript:; "
+				(click)="sanction()"
+				_ngcontent-dkp-c41=""
+				class="btn btn-warning btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+			>
+				Appliquer des sanctions
+			</button>
+
+			<button
+				_ngcontent-dkp-c41=""
+				class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+				type="reset"
+			>
+				<i _ngcontent-dlp-c41 class="icon la la-floppy-o"></i>
+				Enregistrer
+			</button>
+		</div>
+	</div>
+</div>

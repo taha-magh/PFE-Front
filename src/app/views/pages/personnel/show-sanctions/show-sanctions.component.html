@@ -1,0 +1,177 @@
+<!-- begin:: Content -->
+<div class="kt-portlet portlet-1 col-md-12">
+	<div class="kt-portlet__head kt-bg-portlet-2">
+		<div class="kt-portlet__head-label">
+			&nbsp;
+			<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+				Details sur la commision discipline et les sanctions appliquées
+			</h2>
+		</div>
+	</div>
+</div>
+
+<div class="row justify-content-center">
+	<div *ngIf="details" class="kt-portlet portlet-1 col-md-5">
+		<div class="kt-portlet__head kt-bg-portlet-2">
+			<div class="kt-portlet__head-label">
+				&nbsp;
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					Commision discipline
+				</h2>
+			</div>
+		</div>
+		<div class="kt-portlet__body">
+			<div class="row">
+				<div *ngIf="history" class="espace_bloc"></div>
+				<div class="col-md-12 show_port">
+					<table class="table">
+						<tbody>
+							<tr>
+								<th>Date de réunion :</th>
+								<td class="donnee_show">12/09/2022</td>
+							</tr>
+							<tr>
+								<th>Members :</th>
+								<td class="donnee_show">Plusieurs</td>
+							</tr>
+
+							<tr>
+								<th>PV :</th>
+								<td class="donnee_show text-danger"><mat-icon>picture_as_pdf</mat-icon></td>
+							</tr>
+							<tr>
+								<th>Pièce jointes :</th>
+								<td class="donnee_show text-danger"><mat-icon>picture_as_pdf</mat-icon></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="details" class="kt-portlet portlet-1 col-md-5">
+		<div class="kt-portlet__head kt-bg-portlet-2">
+			<div class="kt-portlet__head-label">
+				&nbsp;
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					Actions
+				</h2>
+			</div>
+		</div>
+		<div class="kt-portlet__body">
+			<div class="row">
+				<div *ngIf="history" class="espace_bloc"></div>
+				<div class="col-md-12 show_port">
+					<table class="table">
+						<tbody>
+							<tr>
+								<th>Type :</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+							<tr>
+								<th>Date d'exécution :</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+
+							<tr>
+								<th>
+									Statut :
+								</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+							<tr>
+								<th>
+									Délai règlement de réponces :
+								</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+
+							<tr>
+								<th>Réponces :</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+
+							<tr>
+								<th>Observations :</th>
+								<td class="donnee_show">sample text</td>
+							</tr>						
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row justify-content-center">
+	<div *ngIf="details" class="kt-portlet portlet-1 col-md-5">
+		<div class="kt-portlet__head kt-bg-portlet-2">
+			<div class="kt-portlet__head-label">
+				&nbsp;
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					Sanction
+				</h2>
+			</div>
+		</div>
+		<div class="kt-portlet__body">
+			<div class="row">
+				<div *ngIf="history" class="espace_bloc"></div>
+				<div class="col-md-12 show_port">
+					<table class="table">
+						<tbody>
+							<tr>
+								<th>Type :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Nature :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Objet :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Description :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Retour attendu :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Délai du retour :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Remarques :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Pièces jointes :</th>
+								<td class="donnee_show text-danger"><mat-icon>picture_as_pdf</mat-icon></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="kt-portlet__heads">
+	<div class="kt-portlet__head-label" align="right">
+		<button
+			href="javascript:;"
+			(click)="back()"
+			_ngcontent-dkp-c41=""
+			class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+		>
+			<i _ngcontent-dkp-c41="" class="la la-recycle"></i>
+			{{ "PAGES.GENERAL.EXIT" | translate }}
+		</button>
+	</div>
+</div>
+<div class="espace_bloc"></div>
+<!-- end:: Content -->

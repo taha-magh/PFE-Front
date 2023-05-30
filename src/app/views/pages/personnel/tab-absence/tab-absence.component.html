@@ -1,0 +1,172 @@
+<div class="kt-portlet">
+	<div class="kt-portlet__head">
+		<div class="kt-portlet__head-label">
+			<span class="kt-portlet__head-icon">
+				<i class="flaticon-search-magnifier-interface-symbol"></i>
+			</span>
+			<div class="col-md-4">
+				<mat-form-field>
+					<input
+						matInput
+						placeholder="{{ 'PAGES.GENERAL.FILTER' | translate }}"
+					/>
+				</mat-form-field>
+			</div>
+		</div>
+		<div class="kt-portlet__head-toolbar">
+			<div class="kt-portlet__head-wrapper">
+				<div class="kt-portlet__head-actions">
+					<button
+						*ngIf="dataSource.data.length > 0"
+						type="button"
+						class="btn btn-sm btn-clean btn-icon btn-success btn-icon-md btn_table_show"
+						matTooltip="{{
+							'PAGES.GENERAL.DOWNLOAD' | translate
+						}}&nbsp;"
+					>
+						<i class="flaticon2-download text-success"></i>
+					</button>
+					<a
+						href="javascript:; "
+						(click)="add_modal()"
+						class="btn btn-success btn-elevate btn-icon-sm"
+					>
+						<i class="la la-plus"></i>
+						Nouveau
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- <br />
+	<div class="row">
+		<div class="col-md-4">
+			<div class="form-group">
+				<select
+					name="address1"
+					class="form-control form-control-solid form-control-lg"
+				>
+					<option value="" disabled>--Select Statut--</option>
+					<option value="">statut 1</option>
+					<option value="">statut 2</option>
+					<option value="">statut 3</option>
+				</select>
+				
+				<div class="fv-plugins-message-container"></div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<button class="btn btn-success p-2">Enregistrer</button>
+		</div>
+	</div> -->
+
+	<table
+		id="exportDataSub"
+		mat-table
+		[dataSource]="dataSource"
+		class="mat-elevation-z8"
+		matSort
+	>
+		<!-- note Column -->
+		<ng-container matColumnDef="date_absence">
+			<th mat-header-cell *matHeaderCellDef mat-sort-header>Date d'absence</th>
+			<td mat-cell *matCellDef="let row">
+				12/02/2012
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="jour">
+			<th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre du jours</th>
+			<td mat-cell *matCellDef="let row">
+				12
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="date_retour">
+			<th mat-header-cell *matHeaderCellDef mat-sort-header>
+				Date de retour
+			</th>
+			<td mat-cell *matCellDef="let row">
+				12/03/2012
+			</td>
+		</ng-container>
+
+		<ng-container matColumnDef="certif">
+			<th mat-header-cell *matHeaderCellDef mat-sort-header>Certifié/non certifié</th>
+			<td mat-cell *matCellDef="let row">
+				certifié
+			</td>
+		</ng-container>
+
+        <ng-container matColumnDef="reamrque">
+			<th mat-header-cell *matHeaderCellDef mat-sort-header>Remarque</th>
+			<td mat-cell *matCellDef="let row">
+				remarque1
+			</td>
+		</ng-container>
+
+		<!-- Action Column -->
+		<ng-container matColumnDef="actions">
+			<th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+			<td mat-cell *matCellDef="let row">
+				<button
+					href="javascript:;"
+					(click)="Details()"
+					type="button"
+					class="btn btn-sm btn-clean btn-icon btn-success btn-icon-md btn_table_show"
+					matTooltip="{{ 'PAGES.GENERAL.DETAILS' | translate }}"
+				>
+					<i class="icon la la-search-plus"></i>
+				</button>
+				<button
+					type="button"
+					(click)="edit_modal()"
+					class="btn btn-sm btn-clean btn-icon btn-warning btn-icon-md btn_table_edit"
+					matTooltip="{{ 'PAGES.GENERAL.EDIT' | translate }}"
+				>
+					<i class="icon la la-edit"></i>
+				</button>
+				<button
+					type="button"
+					class="btn btn-sm btn-clean btn-icon btn-danger btn-icon-md btn_table_delete"
+					matTooltip="{{ 'PAGES.GENERAL.DELETE' | translate }}"
+				>
+					<i class="icon la la-trash"></i>
+				</button>
+			</td>
+		</ng-container>
+		<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+		<tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+	</table>
+	<div
+		*ngIf="dataSource.data.length == 0 && isLoading == false"
+		style="
+			display: flex;
+			justify-content: center;
+			padding: 2%;
+			color: orangered;
+		"
+	>
+		{{ "PAGES.GENERAL.NO_RECORDS" | translate }}
+	</div>
+	<mat-card
+		*ngIf="isLoading"
+		style="display: flex; justify-content: center; align-items: center"
+	>
+		<mat-progress-spinner
+			color="primary"
+			mode="indeterminate"
+			diameter="50"
+		>
+		</mat-progress-spinner>
+	</mat-card>
+
+	<mat-paginator
+		*ngIf="dataSource != undefined && dataSource.data != undefined"
+		[length]="dataSource.data.length"
+		[pageSize]="5"
+		[pageIndex]="0"
+		[pageSizeOptions]="[5, 10, 50]"
+		showFirstLastButtons
+	></mat-paginator>
+	<hr />
+</div>

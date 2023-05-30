@@ -1,0 +1,1 @@
+{"version":3,"file":"pageable.js","sourceRoot":"","sources":["../../../../../../../../src/app/views/pages/utils/pagination/pageable.ts"],"names":[],"mappings":"AAEA;IAWI;QACI,IAAI,CAAC,QAAQ,GAAG,QAAQ,CAAC,iBAAiB,CAAC;QAC3C,IAAI,CAAC,UAAU,GAAG,QAAQ,CAAC,iBAAiB,CAAC;IACjD,CAAC;IANe,0BAAiB,GAAG,EAAE,CAAC;IACvB,0BAAiB,GAAG,CAAC,CAAC;IAM1C,eAAC;CAAA,AAfD,IAeC;SAfY,QAAQ"}

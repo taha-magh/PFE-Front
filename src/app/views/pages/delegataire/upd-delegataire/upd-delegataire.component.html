@@ -1,0 +1,397 @@
+<div novalidate autocomplete="off">
+	<!-- {{addForm.value |json}} -->
+	<div class="kt-portlet portlet-3">
+		<div class="kt-portlet__head kt-bg-portlet-3">
+			<div class="kt-portlet__head-label">
+				<span class="kt-portlet__head-icon">
+					<i class="fas fa-address-card kt-font-inverse-brand"></i>
+				</span>
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					Modifier un délégataire
+				</h2>
+			</div>
+		</div>
+	</div>
+	<form [formGroup]="delegataireForm">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Raison Social </label>
+						<input
+							matInput
+							type="text"
+							class="form-control"
+							formControlName="raisonSocial"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> raisonCom </label>
+						<input
+							matInput
+							type="text"
+							class="form-control"
+							formControlName="raisonCom"
+							placeholder=""
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> IF : </label>
+						<input
+							matInput
+							type="text"
+							class="form-control form-control-solid form-control-lg"
+							formControlName="idFiscale"
+							name="address1"
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> ICE : </label>
+
+						<input
+							matInput
+							type="text"
+							class="form-control form-control-solid form-control-lg"
+							formControlName="ice"
+							name="address1"
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> N° CNSS : </label>
+
+						<input
+							matInput
+							type="number"
+							class="form-control form-control-solid form-control-lg"
+							formControlName="numCnss"
+							name="address1"
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Adresse : </label>
+
+						<input
+							matInput
+							type="text"
+							class="form-control form-control-solid form-control-lg"
+							formControlName="adresse"
+							name="address1"
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Tel : </label>
+
+						<input
+							matInput
+							type="tel"
+							class="form-control form-control-solid form-control-lg"
+							formControlName="tel"
+							name="address1"
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Fax : </label>
+
+						<input
+							matInput
+							type="tel"
+							class="form-control form-control-solid form-control-lg"
+							formControlName="fax"
+							name="address1"
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Email : </label>
+
+						<input
+							matInput
+							type="email"
+							class="form-control form-control-solid form-control-lg"
+							formControlName="email"
+							name="address1"
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Gérant : </label>
+
+						<input
+							matInput
+							type="text"
+							class="form-control form-control-solid form-control-lg"
+							formControlName="gerant"
+							name="address1"
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Structure : </label>
+
+						<mat-select matNativeControl class="form-control">
+							<mat-option value="">Structure 1</mat-option>
+							<mat-option value="">Structure 2</mat-option>
+							<mat-option value="">Structure 3</mat-option>
+							<mat-option value="">Structure 4</mat-option>
+							<mat-option value="">Structure 5</mat-option>
+						</mat-select>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group fv-plugins-icon-container">
+					<mat-form-field class="example-full-width">
+						<label> Capital : </label>
+
+						<input
+							matInput
+							type="text"
+							class="form-control form-control-solid form-control-lg"
+							formControlName="capital"
+							name="address1"
+						/>
+					</mat-form-field>
+					<div class="fv-plugins-message-container"></div>
+				</div>
+			</div>
+
+			<div class="pb-5 col-md-6" data-wizard-type="step-content">
+				<h4 class="mb-10 font-weight-bold text-dark"></h4>
+				<div class="kt-portlet">
+					<div class="kt-portlet__head kt-bg-portlet-5">
+						<div class="kt-portlet__head-label">
+						<span class="kt-portlet__head-icon">
+							<i class="flaticon-attachment"></i>
+						</span>
+							&nbsp;
+							<h3 class="kt-portlet__head-title">
+								Secteur d'activité :
+								<i class="la la-cloud-upload"></i>
+							</h3>
+						</div>
+					</div>
+					<div class="kt-portlet__body">
+						<div class="row">
+							<div class="col-md-6 show_port input-group">
+								<form
+									enctype="multipart/form-data"
+									method="POST"
+									style="
+									display: -webkit-inline-box;
+									margin-inline-start: 98px;
+								"
+								>
+									<label class="input-group-btn">
+									<span class="btn btn-info">
+										Sélectionner un fichier
+										<input
+											type="file"
+											name="file"
+											formControlName="_file"
+											id="customFile"
+											style="display: none"
+											multiple
+										/>
+									</span>
+									</label>
+									<input
+										type="text"
+										class="form-control"
+										readonly
+									/>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pb-5 col-md-6" data-wizard-type="step-content">
+				<h4 class="mb-10 font-weight-bold text-dark"></h4>
+				<div class="kt-portlet">
+					<div class="kt-portlet__head kt-bg-portlet-5">
+						<div class="kt-portlet__head-label">
+						<span class="kt-portlet__head-icon">
+							<i class="flaticon-attachment"></i>
+						</span>
+							&nbsp;
+							<h3 class="kt-portlet__head-title">
+								Statut :
+								<i class="la la-cloud-upload"></i>
+							</h3>
+						</div>
+					</div>
+					<div class="kt-portlet__body">
+						<div class="row">
+							<div class="col-md-6 show_port input-group">
+								<form
+									enctype="multipart/form-data"
+									method="POST"
+									style="
+									display: -webkit-inline-box;
+									margin-inline-start: 98px;
+								"
+								>
+									<label class="input-group-btn">
+									<span class="btn btn-info">
+										Sélectionner un fichier
+										<input
+											type="file"
+											name="file"
+											formControlName="_file"
+											id="customFile"
+											style="display: none"
+											multiple
+										/>
+									</span>
+									</label>
+									<input
+										type="text"
+										class="form-control"
+										readonly
+									/>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="pb-5 col-md-12" data-wizard-type="step-content">
+				<h4 class="mb-10 font-weight-bold text-dark"></h4>
+				<div class="kt-portlet">
+					<div class="kt-portlet__head kt-bg-portlet-5">
+						<div class="kt-portlet__head-label">
+						<span class="kt-portlet__head-icon">
+							<i class="flaticon-attachment"></i>
+						</span>
+							&nbsp;
+							<h3 class="kt-portlet__head-title">
+								Modèle J:
+								<i class="la la-cloud-upload"></i>
+							</h3>
+						</div>
+					</div>
+					<div class="kt-portlet__body">
+						<div class="row">
+							<div class="col-md-3"></div>
+							<div class="col-md-6 show_port input-group">
+								<form
+									enctype="multipart/form-data"
+									method="POST"
+									style="
+									display: -webkit-inline-box;
+									margin-inline-start: 98px;
+								"
+								>
+									<label class="input-group-btn">
+									<span class="btn btn-info">
+										Sélectionner un fichier
+										<input
+											type="file"
+											name="file"
+											formControlName="_file"
+											id="customFile"
+											style="display: none"
+											multiple
+										/>
+									</span>
+									</label>
+									<input
+										type="text"
+										class="form-control"
+										readonly
+									/>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="kt-portlet__heads">
+			<div class="kt-portlet__head-label text-right">
+				<button
+					href="javascript:; "
+					(click)="Back()"
+					_ngcontent-dkp-c41=""
+					class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+				>
+					<i _ngcontent-dkp-c41="" class="la la-recycle"></i>
+					{{ "PAGES.GENERAL.RESET" | translate }}
+				</button>
+				<button
+					*ngIf="delegataireForm.valid"
+					(click)="updateDelegataire()"
+					_ngcontent-dkp-c41=""
+					class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+				>
+					<i _ngcontent-dlp-c41 class="icon la la-floppy-o"></i>
+					{{ "PAGES.GENERAL.SAVE" | translate }}
+				</button>
+				<button
+					*ngIf="delegataireForm.invalid"
+					class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+				>
+					<i _ngcontent-dlp-c41 class="icon la la-floppy-o"></i>
+					{{ "PAGES.GENERAL.SAVE" | translate }}
+				</button>
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,208 @@
+<!-- begin:: Content -->
+<div class="kt-portlet portlet-1 col-md-12">
+	<div class="kt-portlet__head kt-bg-portlet-2">
+		<div class="kt-portlet__head-label">
+			<span class="kt-portlet__head-icon">
+				<i class="fas fa-address-card kt-font-inverse-brand"></i>
+			</span>
+			<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+				{{ "PAGES.DEL_SDL.DETAILL_SDL" | translate }}
+			</h2>
+		</div>
+	</div>
+
+	<div class="kt-portlet portlet-1 col-md-12">
+
+		<div class="kt-portlet__body">
+			<div class="row">
+				<div class="col-md-12 show_port">
+					<table class="table">
+						<tbody>
+						<tr>
+							<th>{{ "PAGES.DEL_SDL.RS" | translate }} :</th>
+							<td class="donnee_show">{{ Sdl.raisonSocial }}</td>
+						</tr>
+						<tr>
+							<th>{{ "PAGES.DEL_SDL.RC" | translate }} :</th>
+							<td class="donnee_show">{{ Sdl.raisonCom }}</td>
+						</tr>
+
+						<tr>
+							<th>{{ "PAGES.DEL_SDL.IF" | translate }} :</th>
+							<td class="donnee_show">{{ Sdl.idFiscale }}</td>
+						</tr>
+						<tr>
+							<th>{{ "PAGES.DEL_SDL.ICE" | translate }} :</th>
+							<td class="donnee_show">{{ Sdl.ice }}</td>
+						</tr>
+						<tr>
+							<th>{{ "PAGES.DEL_SDL.NUM_CNSS" | translate }} :</th>
+							<td class="donnee_show">{{ Sdl.numCnss }}</td>
+						</tr>
+						<tr>
+							<th>{{ "PAGES.DEL_SDL.ADRESSE" | translate }} :</th>
+							<td class="donnee_show">{{ Sdl.adresse }}</td>
+						</tr>
+						<tr>
+							<th>{{ "PAGES.DEL_SDL.TEL" | translate }} :</th>
+							<td class="donnee_show">{{ Sdl.tel }}</td>
+						</tr>
+						<tr>
+							<th>{{ "PAGES.DEL_SDL.FAX" | translate }} :</th>
+							<td class="donnee_show">{{ Sdl.fax }}</td>
+						</tr>
+
+						<tr>
+							<th>{{ "PAGES.DEL_SDL.EMAIL" | translate }} :</th>
+							<td class="donnee_show">{{ Sdl.email }}</td>
+						</tr>
+						<tr>
+							<th>{{ "PAGES.DEL_SDL.GERANT" | translate }} :</th>
+							<td class="donnee_show">{{ Sdl.gerant }}</td>
+						</tr>
+						<tr>
+							<th>{{ "PAGES.DEL_SDL.STRUCTURE" | translate }} :</th>
+							<td class="donnee_show">{{ Sdl.structure }}</td>
+						</tr>
+						<tr>
+							<th>{{ "PAGES.DEL_SDL.CAPITAL" | translate }} :</th>
+							<td class="donnee_show">{{ Sdl.capital }}</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div class="row justify-content-center">
+	<div *ngIf="details" class="kt-portlet portlet-1 col-md-6">
+		<div class="kt-portlet__head kt-bg-portlet-2">
+			<div class="kt-portlet__head-label">
+				<span class="kt-portlet__head-icon">
+					<i class="flaticon-attachment"></i>
+				</span>
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					{{ "PAGES.DEL_SDL.STATUT" | translate }}
+
+				</h2>
+			</div>
+		</div>
+		<div class="kt-portlet__body">
+			<div class="row">
+				<div *ngIf="history" class="espace_bloc"></div>
+				<div class="col-md-12 show_port">
+					<table class="table">
+						<tbody>
+						<tr>
+							<th>{{ "PAGES.DEL_SDL.STATUT" | translate }} :</th>
+							<td class="donnee_show">
+								<label class="input-group-btn">
+										<span class="btn btn-info">
+											Télécharger
+											<i class="la la-cloud-upload"></i>
+										</span>
+								</label>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="details" class="kt-portlet portlet-1 col-md-6">
+		<div class="kt-portlet__head kt-bg-portlet-2">
+			<div class="kt-portlet__head-label">
+				<span class="kt-portlet__head-icon">
+					<i class="flaticon-attachment"></i>
+				</span>
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					{{ "PAGES.DEL_SDL.MODEL_J" | translate }}
+				</h2>
+			</div>
+		</div>
+		<div class="kt-portlet__body">
+			<div class="row">
+				<div *ngIf="history" class="espace_bloc"></div>
+				<div class="col-md-12 show_port">
+					<table class="table">
+						<tbody>
+						<tr>
+							<th>{{ "PAGES.DEL_SDL.MODEL_J" | translate }} :</th>
+							<td class="donnee_show">
+								<label class="input-group-btn">
+										<span class="btn btn-info">
+											Télécharger
+											<i class="la la-cloud-upload"></i>
+										</span>
+								</label>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row justify-content-center">
+	<div *ngIf="details" class="kt-portlet portlet-1 col-md-12">
+		<div class="kt-portlet__head kt-bg-portlet-2">
+			<div class="kt-portlet__head-label">
+				<span class="kt-portlet__head-icon">
+					<i class="flaticon-attachment"></i>
+				</span>
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					{{ "PAGES.DEL_SDL.SEC_ACTIVITE" | translate }}
+				</h2>
+			</div>
+		</div>
+		<div class="kt-portlet__body">
+			<div class="row">
+				<div *ngIf="history" class="espace_bloc"></div>
+				<div class="col-md-12 show_port">
+					<table class="table">
+						<tbody>
+						<tr>
+							<th>{{ "PAGES.DEL_SDL.SEC_ACTIVITE" | translate }} :</th>
+							<td class="donnee_show">
+								<label class="input-group-btn">
+										<span class="btn btn-info">
+											Télécharger
+											<i class="la la-cloud-upload"></i>
+										</span>
+								</label>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<mat-tab-group>
+	<mat-tab label="Suivi Sdl">
+		<kt-tab-sdl></kt-tab-sdl>
+	</mat-tab>
+</mat-tab-group>
+
+<div class="kt-portlet__heads">
+	<div class="kt-portlet__head-label" align="right">
+		<button
+			href="javascript:;"
+			(click)="Back()"
+			_ngcontent-dkp-c41=""
+			class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+		>
+			<i _ngcontent-dkp-c41="" class="la la-recycle"></i>
+			{{ "PAGES.GENERAL.EXIT" | translate }}
+		</button>
+	</div>
+</div>
+<div class="espace_bloc"></div>
+<!-- end:: Content -->

@@ -1,0 +1,189 @@
+<div class="kt-portlet">
+	<div class="kt-portlet__head">
+		<div class="kt-portlet__head-label">
+			<h2 class="kt-portlet__head-title">
+				La liste des personnels concernés par promotion
+			</h2>
+		</div>
+	</div>
+	<div class="example-header col-md-4">
+		<i class="flaticon-search-magnifier-interface-symbol text-dark"></i
+		>&nbsp;
+		<mat-form-field>
+			<input
+				matInput
+				(keyup)="applyFilter($event.target.value)"
+				placeholder="{{ 'PAGES.GENERAL.FILTER' | translate }}"
+			/>
+		</mat-form-field>
+	</div>
+
+	<table
+		id="exportData"
+		mat-table
+		[dataSource]="dataSource"
+		class="mat-elevation-z8 w-100"
+		matSort
+	>
+		<ng-container matColumnDef="NUM">
+			<th colspan="3" mat-header-cell *matHeaderCellDef mat-sort-header>
+				N°
+			</th>
+			<td colspan="3" mat-cell *matCellDef="let row">
+				{{ row.NUM }}
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="Nom">
+			<th colspan="3" mat-header-cell *matHeaderCellDef mat-sort-header>
+				Nom
+			</th>
+			<td colspan="3" mat-cell *matCellDef="let row">
+				{{ row.Nom }}
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="Prenom">
+			<th colspan="3" mat-header-cell *matHeaderCellDef mat-sort-header>
+				Prenom
+			</th>
+			<td colspan="3" mat-cell *matCellDef="let row">
+				{{ row.Prenom }}
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="Cin">
+			<th colspan="3" mat-header-cell *matHeaderCellDef mat-sort-header>
+				Cin
+			</th>
+			<td colspan="3" mat-cell *matCellDef="let row">
+				{{ row.Cin }}
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="Division">
+			<th colspan="3" mat-header-cell *matHeaderCellDef mat-sort-header>
+				Division
+			</th>
+			<td colspan="3" mat-cell *matCellDef="let row">
+				{{ row.Division }}
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="Service">
+			<th colspan="3" mat-header-cell *matHeaderCellDef mat-sort-header>
+				Service
+			</th>
+			<td colspan="3" mat-cell *matCellDef="let row">
+				{{ row.Service }}
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="Poste">
+			<th colspan="3" mat-header-cell *matHeaderCellDef mat-sort-header>
+				Poste
+			</th>
+			<td colspan="3" mat-cell *matCellDef="let row">
+				{{ row.Poste }}
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="Annee">
+			<th colspan="3" mat-header-cell *matHeaderCellDef mat-sort-header>
+				Année
+			</th>
+			<td colspan="3" mat-cell *matCellDef="let row">
+				{{ row.Annee }}
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="Dure_service">
+			<th colspan="3" mat-header-cell *matHeaderCellDef mat-sort-header>
+				Durée du service
+			</th>
+			<td colspan="3" mat-cell *matCellDef="let row">
+				{{ row.Dure_service }}
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="actions">
+			<th
+				mat-header-cell
+				*matHeaderCellDef
+				mat-sort-header
+				class="action"
+			>
+				Action
+			</th>
+			<td mat-cell *matCellDef="let row" class="actionsBtn action">
+				<mat-checkbox class="example-margin"></mat-checkbox>
+				<!-- <button
+								href="javascript:;"
+								(click)="Details()"
+								type="button"
+								class="btn btn-sm btn-clean btn-icon btn-success btn-icon-md btn_table_show"
+								matTooltip="{{
+									'PAGES.GENERAL.DETAILS' | translate
+								}}"
+							>
+								<i class="icon la la-search-plus"></i>
+							</button> -->
+				<!-- <button
+					href="javascript:;"
+					(click)="Edit()"
+					type="button"
+					class="btn btn-sm btn-clean btn-icon btn-warning btn-icon-md btn_table_edit"
+					matTooltip="{{ 'PAGES.GENERAL.EDIT' | translate }}"
+				>
+					<i class="icon la la-edit"></i>
+				</button> -->
+			</td>
+		</ng-container>
+
+		<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+		<tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+	</table>
+
+	<div
+		*ngIf="dataSource.data.length == 0 && isLoading == false"
+		style="
+			display: flex;
+			justify-content: center;
+			padding: 2%;
+			color: orangered;
+		"
+	>
+		{{ "PAGES.GENERAL.NO_RECORDS" | translate }}
+	</div>
+	<mat-paginator
+		*ngIf="dataSource != undefined && dataSource.data != undefined"
+		[length]="dataSource.data.length"
+		[pageSize]="5"
+		[pageIndex]="0"
+		[pageSizeOptions]="[5, 10, 50]"
+		showFirstLastButtons
+	></mat-paginator>
+
+	<div class="kt-portlet__heads">
+        <div
+            class="kt-portlet__head-label"
+            align="right"
+        >
+            <button
+                href="javascript:; "
+                (click)="EtapeDernier()"
+                _ngcontent-dkp-c41=""
+                class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+            >
+                <i
+                    _ngcontent-dkp-c41=""
+                    class="la la-recycle"
+                ></i>
+                Retour
+            </button>
+            <button
+                _ngcontent-dkp-c41=""
+                class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+                type="reset"
+            >
+                <i
+                    _ngcontent-dlp-c41
+                    class="icon la la-floppy-o"
+                ></i>
+                Enregistrer
+            </button>
+        </div>
+    </div>
+    <div class="espace_bloc"></div>
+</div>

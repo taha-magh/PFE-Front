@@ -1,0 +1,401 @@
+<!-- begin:: Content -->
+<div class="kt-portlet portlet-1 col-md-12">
+	<div class="kt-portlet__head kt-bg-portlet-2">
+		<div class="kt-portlet__head-label">
+			&nbsp;
+			<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+				La fiche personnel de Mr ...
+			</h2>
+		</div>
+		<!-- <div class="kt-portlet__head-toolbar">
+			<div class="kt-portlet__head-wrapper">
+				<div class="kt-portlet__head-actions">
+					<a
+						href="javascript:; "
+						(click)="absence()"
+						class="btn btn-success btn-elevate btn-icon-sm"
+					>
+						Gestion d'absence
+					</a>
+				</div>
+			</div>
+
+            <div class="kt-portlet__head-wrapper">
+				<div class="kt-portlet__head-actions">
+					<a
+						href="javascript:; "
+						(click)="sanction()"
+						class="btn btn-success btn-elevate btn-icon-sm"
+					>
+						Gestion des sanctions
+					</a>
+				</div>
+			</div>
+		</div> -->
+	</div>
+</div>
+
+<div class="row justify-content-center">
+	<div *ngIf="details" class="kt-portlet portlet-1 col-md-5">
+		<div class="kt-portlet__head kt-bg-portlet-2">
+			<div class="kt-portlet__head-label">
+				&nbsp;
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					Informations générales
+				</h2>
+			</div>
+		</div>
+		<div class="kt-portlet__body">
+			<div class="row">
+				<div *ngIf="history" class="espace_bloc"></div>
+				<div class="col-md-12 show_port">
+					<table class="table">
+						<tbody>
+							<tr>
+								<th>Nom :</th>
+								<td class="donnee_show">Nom1</td>
+							</tr>
+							<tr>
+								<th>Prenom :</th>
+								<td class="donnee_show">Prenom1</td>
+							</tr>
+
+							<tr>
+								<th>Matricule :</th>
+								<td class="donnee_show">3255654644</td>
+							</tr>
+							<tr>
+								<th>CIN :</th>
+								<td class="donnee_show">A245545</td>
+							</tr>
+
+							<tr>
+								<th>Date de naissance :</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+							<tr>
+								<th>Nationalité :</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+							<tr>
+								<th>Sexe :</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+							<tr>
+								<th>Type :</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+							<tr>
+								<th>Situation familiale :</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="details" class="kt-portlet portlet-1 col-md-5">
+		<div class="kt-portlet__head kt-bg-portlet-2">
+			<div class="kt-portlet__head-label">
+				&nbsp;
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					Contact
+				</h2>
+			</div>
+		</div>
+		<div class="kt-portlet__body">
+			<div class="row">
+				<div *ngIf="history" class="espace_bloc"></div>
+				<div class="col-md-12 show_port">
+					<table class="table">
+						<tbody>
+							<tr>
+								<th>Adresse :</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+							<tr>
+								<th>Tel domicile :</th>
+								<td class="donnee_show">0645454441</td>
+							</tr>
+
+							<tr>
+								<th>
+									Personne à contacter en cas de malaise :
+								</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+							<tr>
+								<th>
+									Tel personne à contacter en cas de malaise :
+								</th>
+								<td class="donnee_show">0664775445</td>
+							</tr>
+
+							<tr>
+								<th>Nom du conjoint :</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+
+							<tr>
+								<th>Prenom du conjoint :</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+
+							<tr>
+								<th>Date de fin de l'activité :</th>
+								<td class="donnee_show">12/02/2015</td>
+							</tr>
+
+							<tr>
+								<th>CIN du conjoint :</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row justify-content-center">
+	<div *ngIf="details" class="kt-portlet portlet-1 col-md-5">
+		<div class="kt-portlet__head kt-bg-portlet-2">
+			<div class="kt-portlet__head-label">
+				&nbsp;
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					Activité
+				</h2>
+			</div>
+		</div>
+		<div class="kt-portlet__body">
+			<div class="row">
+				<div *ngIf="history" class="espace_bloc"></div>
+				<div class="col-md-12 show_port">
+					<table class="table">
+						<tbody>
+							<tr>
+								<th>Division :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Echelle :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Service :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Echellon :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Poste :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Diplome :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Grade :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Niveau académique :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="details" class="kt-portlet portlet-1 col-md-5">
+		<div class="kt-portlet__head kt-bg-portlet-2">
+			<div class="kt-portlet__head-label">
+				&nbsp;
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					Autres Informations
+				</h2>
+			</div>
+		</div>
+		<div class="kt-portlet__body">
+			<div class="row">
+				<div *ngIf="history" class="espace_bloc"></div>
+				<div class="col-md-12 show_port">
+					<table class="table">
+						<tbody>
+							<tr>
+								<th>Date de recrutement :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Date prise de service :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Durée prévue :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Date prise de service :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row justify-content-center">
+	<div *ngIf="details" class="kt-portlet portlet-1 col-md-5">
+		<div class="kt-portlet__head kt-bg-portlet-2">
+			<div class="kt-portlet__head-label">
+				&nbsp;
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					Pièces jointes
+				</h2>
+			</div>
+		</div>
+		<div class="kt-portlet__body">
+			<div class="row">
+				<div *ngIf="history" class="espace_bloc"></div>
+				<div class="col-md-12 show_port">
+					<table class="table">
+						<tbody>
+							<tr>
+								<th>Status pour les personnes morales :</th>
+								<td class="donnee_show text-danger">
+									<mat-icon>picture_as_pdf</mat-icon>
+								</td>
+							</tr>
+							<tr>
+								<th>Fiche 2 :</th>
+								<td class="donnee_show text-danger">
+									<mat-icon>picture_as_pdf</mat-icon>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Agrégament pour les coopératives soumises à
+									l'inscription au registre :
+								</th>
+								<td class="donnee_show text-danger">
+									<mat-icon>picture_as_pdf</mat-icon>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="details" class="kt-portlet portlet-1 col-md-5">
+		<div class="kt-portlet__head kt-bg-portlet-2">
+			<div class="kt-portlet__head-label">
+				&nbsp;
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					Congé
+				</h2>
+			</div>
+		</div>
+		<div class="kt-portlet__body">
+			<div class="row">
+				<div *ngIf="history" class="espace_bloc"></div>
+				<div class="col-md-12 show_port">
+					<table class="table">
+						<tbody>
+							<tr>
+								<th>Type de congé :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Nombre de jours de congé consommés :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Nombre de jours de congé restants :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+							<tr>
+								<th>Nombre d'absence :</th>
+								<td class="donnee_show">aaaa</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="kt-portlet portlet-1">
+	<div class="kt-portlet__head kt-bg-portlet-2">
+		<div class="kt-portlet__head-label">
+			<span class="kt-portlet__head-icon">
+				<i class="flaticon-suitcase kt-font-inverse-brand"></i>
+			</span>
+			&nbsp;
+			<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+				Espace de personnel
+			</h2>
+		</div>
+	</div>
+	<div class="kt-portlet__body">
+		<div class="row">
+			<div class="col-md-12 show_port">
+				<mat-tab-group
+					dynamicHeight
+					[selectedIndex]="selected.value"
+					(selectedIndexChange)="selected.setValue($event)"
+				>
+					<mat-tab>
+						<ng-template mat-tab-label> Absence </ng-template>
+						<div>
+							<div>
+								<div>
+									<kt-tab-absence></kt-tab-absence>
+								</div>
+							</div>
+						</div>
+					</mat-tab>
+
+					<mat-tab>
+						<ng-template mat-tab-label> Sanction </ng-template>
+						<div>
+							<div>
+								<div>
+									<kt-tab-sanctions></kt-tab-sanctions>
+								</div>
+							</div>
+						</div>
+					</mat-tab>
+				</mat-tab-group>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="kt-portlet__heads">
+	<div class="kt-portlet__head-label" align="right">
+		<button
+			href="javascript:;"
+			(click)="back()"
+			_ngcontent-dkp-c41=""
+			class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+		>
+			<i _ngcontent-dkp-c41="" class="la la-recycle"></i>
+			{{ "PAGES.GENERAL.EXIT" | translate }}
+		</button>
+	</div>
+</div>
+<div class="espace_bloc"></div>
+<!-- end:: Content -->

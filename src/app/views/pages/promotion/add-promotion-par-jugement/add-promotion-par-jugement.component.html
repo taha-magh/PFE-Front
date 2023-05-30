@@ -1,0 +1,135 @@
+<!--begin::Form-->
+
+<div autocomplete="off">
+	<!-- {{addForm.value |json}} -->
+	<div class="kt-portlet portlet-3">
+		<div class="kt-portlet__head kt-bg-portlet-3">
+			<div class="kt-portlet__head-label">
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					Ajouter une promotion par un jugement
+				</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group fv-plugins-icon-container">
+				<mat-form-field class="example-full-width">
+					<label> Division </label>
+					<input
+						matInput
+						type="text"
+						class="form-control"
+						placeholder=""
+					/>
+				</mat-form-field>
+				<div class="fv-plugins-message-container"></div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group fv-plugins-icon-container">
+				<mat-form-field class="example-full-width">
+					<label>Service </label>
+					<input
+						matInput
+						type="text"
+						class="form-control form-control-solid form-control-lg"
+						name="address1"
+					/>
+				</mat-form-field>
+				<div class="fv-plugins-message-container"></div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group fv-plugins-icon-container">
+				<mat-form-field class="example-full-width">
+					<label> Grade </label>
+					<mat-select>
+						<mat-option value="10">grade1</mat-option>
+						<mat-option value="20">grade2</mat-option>
+						<mat-option value="100">grade3</mat-option>
+					</mat-select>
+				</mat-form-field>
+				<div class="fv-plugins-message-container"></div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group fv-plugins-icon-container">
+				<mat-form-field class="example-full-width">
+					<label>Echelle </label>
+					<mat-select>
+						<mat-option value="10">echelle1</mat-option>
+						<mat-option value="20">echelle2</mat-option>
+						<mat-option value="100">echelle3</mat-option>
+					</mat-select>
+				</mat-form-field>
+				<div class="fv-plugins-message-container"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="kt-portlet">
+		<div class="kt-portlet__head kt-bg-portlet-5">
+			<div class="kt-portlet__head-label">
+				<span class="kt-portlet__head-icon">
+					<i class="flaticon-attachment"></i>
+				</span>
+				&nbsp;
+				<h3 class="kt-portlet__head-title">Piéces Jointes</h3>
+			</div>
+		</div>
+		<div class="kt-portlet__body">
+			<div class="row">
+				<div class="col-md-6 show_port input-group">
+					<form
+						enctype="multipart/form-data"
+						method="POST"
+						style="
+							display: -webkit-inline-box;
+							margin-inline-start: 98px;
+						"
+					>
+						<label class="input-group-btn">
+							<span class="btn btn-info">
+								selectionner un fichier
+								<input
+									type="file"
+									name="file"
+									formControlName="_file"
+									id="customFile"
+									style="display: none"
+									multiple
+								/>
+							</span>
+						</label>
+						<input type="text" class="form-control" readonly />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="kt-portlet__heads">
+		<div class="kt-portlet__head-label" align="right">
+			<button
+				href="javascript:; "
+				(click)="EtapeDernier()"
+				_ngcontent-dkp-c41=""
+				class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+			>
+				<i _ngcontent-dkp-c41="" class="la la-recycle"></i>
+				Retour
+			</button>
+			<button
+				_ngcontent-dkp-c41=""
+				class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+				type="reset"
+			>
+				<i _ngcontent-dlp-c41 class="icon la la-floppy-o"></i>
+				Enregistrer
+			</button>
+		</div>
+	</div>
+</div>

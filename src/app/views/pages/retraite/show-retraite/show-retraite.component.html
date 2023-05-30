@@ -1,0 +1,81 @@
+<!-- begin:: Content -->
+<div class="kt-portlet portlet-1 col-md-12">
+	<div class="kt-portlet__head kt-bg-portlet-2">
+		<div class="kt-portlet__head-label">
+			&nbsp;
+			<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+				Details de retraité
+			</h2>
+		</div>
+	</div>
+</div>
+
+<div class="row justify-content-center">
+	<div *ngIf="details" class="kt-portlet portlet-1 col-md-10">
+		<div class="kt-portlet__body">
+			<div class="row">
+				<div *ngIf="history" class="espace_bloc"></div>
+				<div class="col-md-12 show_port">
+					<table class="table">
+						<tbody>
+							<tr>
+								<th>Nom :</th>
+								<td class="donnee_show">Nom1</td>
+							</tr>
+							<tr>
+								<th>Prenom :</th>
+								<td class="donnee_show">Prenom1</td>
+							</tr>
+
+							<tr>
+								<th>Matricule :</th>
+								<td class="donnee_show">3255654644</td>
+							</tr>
+							<tr>
+								<th>CIN :</th>
+								<td class="donnee_show">A245545</td>
+							</tr>
+
+							<tr>
+								<th>Division :</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+							<tr>
+								<th>Service :</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+							<tr>
+								<th>Poste :</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+							<tr>
+								<th>Année :</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+							<tr>
+								<th>Dure de service :</th>
+								<td class="donnee_show">sample text</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="kt-portlet__heads">
+	<div class="kt-portlet__head-label" align="right">
+		<button
+			href="javascript:;"
+			(click)="back()"
+			_ngcontent-dkp-c41=""
+			class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+		>
+			<i _ngcontent-dkp-c41="" class="la la-recycle"></i>
+			{{ "PAGES.GENERAL.EXIT" | translate }}
+		</button>
+	</div>
+</div>
+<div class="espace_bloc"></div>
+<!-- end:: Content -->
