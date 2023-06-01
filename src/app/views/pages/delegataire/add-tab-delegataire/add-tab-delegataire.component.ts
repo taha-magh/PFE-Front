@@ -70,11 +70,12 @@ export class AddTabDelegataireComponent implements OnInit {
 						showConfirmButton: false,
 						timer: 1500,
 					}).then(() => {
-						this.router.navigate(['pages/delegataire/tab-delegataire']);
+						this.location.back();
+						//this.router.navigate(['pages/delegataire/tab-delegataire' ]);
 						// localStorage.setItem("curentStep", JSON.stringify(1));
                     });
                 }
-                console.log('res add suivi-delegataire =========>', res);
+    console.log('res add suivi-delegataire =========>', res);
             });
         }
         // localStorage.setItem("curentStep", JSON.stringify(0));

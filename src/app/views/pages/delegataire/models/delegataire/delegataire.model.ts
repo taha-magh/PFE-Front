@@ -12,7 +12,8 @@ export interface IDelegataire {
     fax?: string;
     email?: string;
     gerant?: string;
-    structure?: StructureDelegataire;
+    structure?: string;
+    //structure?: StructureDelegataire;
     capital?: string;
 
     // private PieceJointeDTO pieceJointeDelegataire;
@@ -34,6 +35,7 @@ export class Delegataire implements IDelegataire {
     fax?: string;
     email?: string;
     gerant?: string;
-    structure?: StructureDelegataire;
+    structure?: string;
+    //structure?: StructureDelegataire;
     capital?: string;
 }

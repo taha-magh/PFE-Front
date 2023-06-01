@@ -18,7 +18,7 @@ export class UpdTypeIndicateurDelegataireComponent implements OnInit {
 
 	// GroupForm typeIndicDelegataireForm
 	typeIndicDelegataireForm = this.fb.group({
-		objet: [''],
+		id: [''],
 		// isCommuneInformed: [''],
 		libelle: [''],
 		description: [''],

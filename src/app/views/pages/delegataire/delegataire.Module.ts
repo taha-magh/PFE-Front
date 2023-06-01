@@ -64,7 +64,7 @@ import {TabDelegataireRoutingResolveService} from './service/tab-delegataire/tab
                         path: 'upd-tab-delegataire/:id',
                         component: UpdTabDelegataireComponent,
 						resolve: {
-							tabDelegataire: TabDelegataireRoutingResolveService,
+							suiviDelegataire: TabDelegataireRoutingResolveService,
 						}
                     },
                     {

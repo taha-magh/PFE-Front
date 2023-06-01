@@ -19,7 +19,7 @@ export class UpdStructureSdlComponent implements OnInit {
 
 	// GroupForm structureSdlForm
 	structureSdlForm = this.fb.group({
-		objet: [''],
+		id: [''],
 		// isCommuneInformed: [''],
 		libelle: [''],
 		description: [''],

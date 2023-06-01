@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import { TabDelegataireService } from '../service/tab-delegataire/tab-delegataire.service';
 import { ISuiviDelegataire } from '../models/delegataire/tab-delegataire.model';
 import { HttpResponse } from '@angular/common/http';
+import { Location } from '@angular/common';
 @Component({
     selector: 'kt-upd-tab-delegataire',
     templateUrl: './upd-tab-delegataire.component.html',
@@ -19,7 +20,7 @@ export class UpdTabDelegataireComponent implements OnInit {
 
     // GroupForm suiviDelegataireForm
     suiviDelegataireForm = this.fb.group({
-        objet: [''],
+		id: [''],
         typeIndicateur: [''],
         nom: [''],
 		description: [''],
@@ -35,7 +36,8 @@ export class UpdTabDelegataireComponent implements OnInit {
         private fb: FormBuilder,
         private suiviDelegataireService: TabDelegataireService,
         private translate: TranslateService,
-        private activatedRoute: ActivatedRoute
+        private activatedRoute: ActivatedRoute,
+        private  location: Location
     ) {}
 
     ngOnInit() {
@@ -52,7 +54,7 @@ export class UpdTabDelegataireComponent implements OnInit {
         });
     }
     Back(): void {
-        this.router.navigate(['pages/delegataire/detail-delegataire']);
+         this.location.back();
     }
 
     updateSuiviDelegataire() {
@@ -75,9 +77,9 @@ export class UpdTabDelegataireComponent implements OnInit {
                                 showConfirmButton: false,
                                 timer: 1500,
 							}).then((result) => {
-                                this.router.navigate([
-                                     "/pages/delegataire/detail-delegataire",
-                                ]);
+								this.location.back();
+								// this.router.navigate([
+                                //      "/pages/delegataire/detail-delegataire",
 							});
 						},
 						(error) => {

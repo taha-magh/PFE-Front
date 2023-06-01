@@ -41,7 +41,8 @@ export class TabDelegataireService {
 	}
 
 	addSuiviDelegataire(suiviDelegataires: ISuiviDelegataire): Observable<EntityResponseType> {
-		return this.http.post<ISuiviDelegataire>(this.resourceUrl + 'add-tab-delegataire', suiviDelegataires,
+		return this.http.post<ISuiviDelegataire>(this.resourceUrl , suiviDelegataires,
+		//return this.http.post<ISuiviDelegataire>(this.resourceUrl + 'add-tab-delegataire', suiviDelegataires,
 			{ observe: 'response'});
 		// return this.http.post<ISuiviDelegataire>(this.resourceUrl, suiviDelegataires, {
 		// 	observe: "response",

@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import {TabSdlService} from '../service/tab-sdl/tab-sdl.service';
 import { ISuiviSdl } from "../models/sdl/tab-sdl.model";
 import { HttpResponse } from "@angular/common/http";
+import {Location} from '@angular/common';
 @Component({
 	selector: 'kt-upd-tab-sdl',
 	templateUrl: './upd-tab-sdl.component.html',
@@ -14,11 +15,11 @@ import { HttpResponse } from "@angular/common/http";
 export class UpdTabSdlComponent implements OnInit {
 	suiviSdls: ISuiviSdl;
 	formSdlSubmitted = false;
-	tabSdl?: ISuiviSdl[] | null;
+	tabSuiviSdl?: ISuiviSdl[] | null;
 
 	// GroupForm suiviSdlForm
 	suiviSdlForm = this.fb.group({
-		objet: [''],
+		id: [''],
 		typeIndicateur: [''],
 		nom: [''],
 		description: [''],
@@ -32,24 +33,25 @@ export class UpdTabSdlComponent implements OnInit {
 		private fb: FormBuilder,
 		private suiviSdlService: TabSdlService,
 		private translate: TranslateService,
-		private activatedRoute: ActivatedRoute
+		private activatedRoute: ActivatedRoute,
+		private  location: Location
 	) {}
 
 	ngOnInit() {
-		this.activatedRoute.data.subscribe(({ sdl }) => {
-			this.suiviSdlForm.patchValue({ ...sdl });
+		this.activatedRoute.data.subscribe(({ tabSdl }) => {
+			this.suiviSdlForm.patchValue({ ...tabSdl });
 		});
 		console.log('this.editForm :', this.suiviSdlForm.value);
 
 		this.suiviSdlService.query({ size: 1000 }).subscribe({
 			next: (res: HttpResponse<ISuiviSdl[]>) => {
-				this.tabSdl = res.body;
+				this.tabSuiviSdl = res.body;
 			},
 			error: () => {},
 		});
 	}
 	Back(): void {
-		this.router.navigate(['pages/delegataire/detail-sdl']);
+		this.location.back();
 	}
 
 	updateSuiviSdl() {
@@ -72,9 +74,7 @@ export class UpdTabSdlComponent implements OnInit {
 								showConfirmButton: false,
 								timer: 1500,
 							}).then((result) => {
-								this.router.navigate([
-									"/pages/delegataire/detail-sdl",
-								]);
+								this.location.back();
 							});
 						},
 						(error) => {

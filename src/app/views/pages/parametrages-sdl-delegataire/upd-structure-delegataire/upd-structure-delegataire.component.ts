@@ -20,7 +20,7 @@ export class UpdStructureDelegataireComponent implements OnInit {
 
 	// GroupForm structureDelegataireForm
 	structureDelegataireForm = this.fb.group({
-		objet: [''],
+		id: [''],
 		// isCommuneInformed: [''],
 		libelle: [''],
 		description: [''],

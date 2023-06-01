@@ -14,7 +14,8 @@ export interface ISdl {
     fax?: string;
     email?: string;
     gerant?: string;
-    structure?: StructureSdl;
+    structure?: string;
+    //structure?: StructureSdl;
     capital?: string;
 
     // private PieceJointeDTO pieceJointeSdl;
@@ -36,6 +37,7 @@ export class Sdl implements ISdl {
     fax?: string;
     email?: string;
     gerant?: string;
-    structure?: StructureSdl;
+    structure?: string;
+    //structure?: StructureSdl;
     capital?: string;
 }

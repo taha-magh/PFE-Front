@@ -18,7 +18,7 @@ export class UpdTypeIndicateurSdlComponent implements OnInit {
 
 	// GroupForm typeIndicSdlForm
 	typeIndicSdlForm = this.fb.group({
-		objet: [''],
+		id: [''],
 		// isCommuneInformed: [''],
 		libelle: [''],
 		description: [''],

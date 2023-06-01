@@ -18,7 +18,7 @@ export class UpdDelegataireComponent implements OnInit {
 
     // GroupForm delegataireForm
     delegataireForm = this.fb.group({
-        objet: [''],
+		id: [''],
         // isCommuneInformed: [''],
         raisonSocial: [''],
 		raisonCom: [''],
