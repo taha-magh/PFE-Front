@@ -205,20 +205,18 @@
 				<mat-form-field class="example-full-width">
 					<mat-label>
 						{{ "PAGES.DEL_SDL.STRUCTURE" | translate }} :
-
 					</mat-label>
-
-					<mat-select matNativeControl class="form-control">
-						<mat-option value="">Structure 1</mat-option>
-						<mat-option value="">Structure 2</mat-option>
-						<mat-option value="">Structure 3</mat-option>
-						<mat-option value="">Structure 4</mat-option>
-						<mat-option value="">Structure 5</mat-option>
+					<mat-select class="form-control-lg" formControlName="structure">
+						<mat-option *ngFor="let structure of tabStructureDelegataires" [value]="structure.id">
+							{{structure.libelle}}
+						</mat-option>
 					</mat-select>
 				</mat-form-field>
+
 				<div class="fv-plugins-message-container"></div>
 			</div>
 		</div>
+
 		<div class="col-md-6">
 			<div class="form-group fv-plugins-icon-container">
 				<mat-form-field class="example-full-width">

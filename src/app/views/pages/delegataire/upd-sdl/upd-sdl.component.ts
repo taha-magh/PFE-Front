@@ -6,6 +6,8 @@ import Swal from "sweetalert2";
 import { SdlService } from "../service/sdl/sdl.service";
 import { ISdl } from "../models/sdl/sdl.model";
 import { HttpResponse } from "@angular/common/http";
+import {IStructureSdl} from '../../parametrages-sdl-delegataire/models/structureSdl/structureSdl.model';
+import {StructureSdlService} from '../../parametrages-sdl-delegataire/service/structureSdl/structure-sdl.service';
 @Component({
 	selector: 'kt-upd-sdl',
 	templateUrl: './upd-sdl.component.html',
@@ -15,6 +17,8 @@ export class UpdSdlComponent implements OnInit {
 	sdls: ISdl;
 	formSdlSubmitted = false;
 	tabSdl?: ISdl[] | null;
+	tabStructureSdls?: IStructureSdl[] | null;
+
 
 	// GroupForm sdlForm
 	sdlForm = this.fb.group({
@@ -39,10 +43,20 @@ export class UpdSdlComponent implements OnInit {
 		private fb: FormBuilder,
 		private sdlService: SdlService,
 		private translate: TranslateService,
+		private structureSdlService: StructureSdlService,
 		private activatedRoute: ActivatedRoute
 	) {}
 
 	ngOnInit() {
+
+		// get list of types affaire
+		this.structureSdlService.query({ size: 1000 }).subscribe({
+			next: (res: HttpResponse<IStructureSdl[]>) => {
+				this.tabStructureSdls =  res.body;
+			},
+			error: () => { },
+		});
+
 		this.activatedRoute.data.subscribe(({ sdl }) => {
 			this.sdlForm.patchValue({ ...sdl });
 		});

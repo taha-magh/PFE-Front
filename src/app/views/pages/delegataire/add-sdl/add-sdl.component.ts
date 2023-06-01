@@ -5,6 +5,11 @@ import { TranslateService } from '@ngx-translate/core';
 import Swal from 'sweetalert2';
 import {ISdl} from '../models/sdl/sdl.model';
 import {SdlService} from '../service/sdl/sdl.service';
+import {IStructureSdl} from '../../parametrages-sdl-delegataire/models/structureSdl/structureSdl.model';
+import {StructureDelegataireService} from '../../parametrages-sdl-delegataire/service/structureDelegataire/structure-delegataire.service';
+import {StructureSdlService} from '../../parametrages-sdl-delegataire/service/structureSdl/structure-sdl.service';
+import {HttpResponse} from '@angular/common/http';
+import {IStructureDelegataire} from '../../parametrages-sdl-delegataire/models/structureDelegataire/structureDelegataire.model';
 @Component({
     selector: 'kt-add-sdl',
     templateUrl: './add-sdl.component.html',
@@ -13,8 +18,10 @@ import {SdlService} from '../service/sdl/sdl.service';
 export class AddSdlComponent implements OnInit {
     formDemandeSubmitted = false;
     sdls: ISdl;
+	tabStructureSdls?: IStructureSdl[] | null;
 
-    // GroupForm avocatForm
+
+	// GroupForm avocatForm
     sdlForm = this.fb.group({
         objet: [''],
         // isCommuneInformed: [''],
@@ -35,10 +42,18 @@ export class AddSdlComponent implements OnInit {
         private router: Router,
         private fb: FormBuilder,
         private sdlService: SdlService,
+        private structureSdlService: StructureSdlService,
         private translate: TranslateService
     ) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		// get list of types affaire
+		this.structureSdlService.query({ size: 1000 }).subscribe({
+			next: (res: HttpResponse<IStructureSdl[]>) => {
+				this.tabStructureSdls =  res.body;
+			},
+			error: () => { },
+		});}
 
 	Back(): void {
 		this.router.navigate(['pages/delegataire/sdl'])

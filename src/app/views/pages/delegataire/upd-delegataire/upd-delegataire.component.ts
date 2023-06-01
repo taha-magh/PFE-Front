@@ -6,6 +6,8 @@ import Swal from "sweetalert2";
 import { DelegataireService } from "../service/delegataire/delegataire.service";
 import { IDelegataire } from "../models/delegataire/delegataire.model";
 import { HttpResponse } from "@angular/common/http";
+import {IStructureDelegataire} from '../../parametrages-sdl-delegataire/models/structureDelegataire/structureDelegataire.model';
+import {StructureDelegataireService} from '../../parametrages-sdl-delegataire/service/structureDelegataire/structure-delegataire.service';
 @Component({
     selector: 'kt-upd-delegataire',
     templateUrl: './upd-delegataire.component.html',
@@ -15,8 +17,10 @@ export class UpdDelegataireComponent implements OnInit {
     delegatairess: IDelegataire;
     formDelegataireSubmitted = false;
     tabDelegataire?: IDelegataire[] | null;
+	tabStructureDelegataires?: IStructureDelegataire[] | null;
 
-    // GroupForm delegataireForm
+
+	// GroupForm delegataireForm
     delegataireForm = this.fb.group({
 		id: [''],
         // isCommuneInformed: [''],
@@ -39,10 +43,20 @@ export class UpdDelegataireComponent implements OnInit {
         private fb: FormBuilder,
         private delegataireService: DelegataireService,
         private translate: TranslateService,
-        private activatedRoute: ActivatedRoute
+		private structureDelegataireService: StructureDelegataireService,
+
+		private activatedRoute: ActivatedRoute
     ) {}
 
     ngOnInit() {
+
+		// get list of types affaire
+		this.structureDelegataireService.query({ size: 1000 }).subscribe({
+			next: (res: HttpResponse<IStructureDelegataire[]>) => {
+				this.tabStructureDelegataires =  res.body;
+			},
+			error: () => { },
+		});
         this.activatedRoute.data.subscribe(({ delegataire }) => {
         this.delegataireForm.patchValue({ ...delegataire });
     });

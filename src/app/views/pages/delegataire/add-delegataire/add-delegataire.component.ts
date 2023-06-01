@@ -6,6 +6,9 @@ import Swal from 'sweetalert2';
 
 import {IDelegataire} from '../models/delegataire/delegataire.model';
 import {DelegataireService} from '../service/delegataire/delegataire.service';
+import {StructureDelegataireService} from '../../parametrages-sdl-delegataire/service/structureDelegataire/structure-delegataire.service';
+import {IStructureDelegataire} from '../../parametrages-sdl-delegataire/models/structureDelegataire/structureDelegataire.model';
+import {HttpResponse} from '@angular/common/http';
 @Component({
     selector: 'kt-add-delegataire',
     templateUrl: './add-delegataire.component.html',
@@ -14,10 +17,11 @@ import {DelegataireService} from '../service/delegataire/delegataire.service';
 export class AddDelegataireComponent implements OnInit {
     formDemandeSubmitted = false;
     delegatairess: IDelegataire;
+	tabStructureDelegataires?: IStructureDelegataire[] | null;
 
     // GroupForm delegataireForm
     delegataireForm = this.fb.group({
-        objet: [''],
+        id: [''],
         // isCommuneInformed: [''],
         raisonSocial: [''],
 		raisonCom: [''],
@@ -37,10 +41,19 @@ export class AddDelegataireComponent implements OnInit {
         private router: Router,
         private fb: FormBuilder,
         private delegataireService: DelegataireService,
+        private structureDelegataireService: StructureDelegataireService,
         private translate: TranslateService
     ) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+		// get list of types affaire
+		this.structureDelegataireService.query({ size: 1000 }).subscribe({
+			next: (res: HttpResponse<IStructureDelegataire[]>) => {
+				this.tabStructureDelegataires =  res.body;
+			},
+			error: () => { },
+		});
+	}
 
     Back(): void {
         this.router.navigate(['pages/delegataire/delegataires'])
