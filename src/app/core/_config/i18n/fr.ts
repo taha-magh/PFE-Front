@@ -2140,6 +2140,7 @@ export const locale = {
 				EMAIL: "Email",
 				GERANT: "Gérant",
 				STRUCTURE: "Structure",
+				TYPE_INDIC:"Type d'indicateur",
 				CAPITAL: "Capital",
 				ACTIONS: "Actions",
 				SEC_ACTIVITE: "Secteur d'activité",

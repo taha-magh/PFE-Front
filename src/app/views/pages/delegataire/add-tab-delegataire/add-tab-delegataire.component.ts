@@ -6,6 +6,10 @@ import Swal from "sweetalert2";
 import { ISuiviDelegataire } from "../models/delegataire/tab-delegataire.model";
 import { TabDelegataireService } from "../service/tab-delegataire/tab-delegataire.service";
 import { Location } from '@angular/common';
+import {ITypeIndicDelegataire} from '../../parametrages-sdl-delegataire/models/typeIndicDelegataire/typeIndicDelegataire.model';
+import {TypeIndicDelegataireService} from '../../parametrages-sdl-delegataire/service/typeIndicDelegataire/type-indic-delegataire.service';
+import {HttpResponse} from '@angular/common/http';
+import {IStructureDelegataire} from '../../parametrages-sdl-delegataire/models/structureDelegataire/structureDelegataire.model';
 
 @Component({
     selector: 'kt-add-tab-delegataire',
@@ -15,8 +19,10 @@ import { Location } from '@angular/common';
 export class AddTabDelegataireComponent implements OnInit {
     formDemandeSubmitted = false;
     suiviDelegataires: ISuiviDelegataire;
+	tabTypeIndicateurDelegataires?: ITypeIndicDelegataire[] | null;
 
-    // GroupForm suiviDelegataireForm
+
+	// GroupForm suiviDelegataireForm
     suiviDelegataireForm = this.fb.group({
         objet: [''],
 		typeIndicateur: [''],
@@ -34,10 +40,19 @@ export class AddTabDelegataireComponent implements OnInit {
         private fb: FormBuilder,
         private suiviDelegataireService: TabDelegataireService,
         private translate: TranslateService,
+        private typeIndicDelegataireService: TypeIndicDelegataireService,
         private  location: Location
     ) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+		// get list of types affaire
+		this.typeIndicDelegataireService.query({ size: 1000 }).subscribe({
+			next: (res: HttpResponse<ITypeIndicDelegataire[]>) => {
+				this.tabTypeIndicateurDelegataires =  res.body;
+			},
+			error: () => { },
+		});
+	}
 	Back(): void {
 		this.location.back();
 	}

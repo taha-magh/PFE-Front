@@ -24,8 +24,8 @@ export class AddDelegataireComponent implements OnInit {
         id: [''],
         // isCommuneInformed: [''],
         raisonSocial: [''],
-		raisonCom: [''],
-		idFiscale: ['', Validators.required],
+        raisonCom: [''],
+        idFiscale: ['', Validators.required],
         ice: ['', Validators.required],
         numCnss: ['', Validators.required],
         adresse: [''],
@@ -87,7 +87,8 @@ export class AddDelegataireComponent implements OnInit {
 						position: 'center',
 						icon: 'success',
 						title: this.translate.instant(
-							'PAGES.GENERAL.MSG_SAVED_CONFIRMED'
+							'Enregistré avec succes !'
+							// 'PAGES.GENERAL.MSG_SAVED_CONFIRMED'
 						),
 						showConfirmButton: false,
 						timer: 1500,
