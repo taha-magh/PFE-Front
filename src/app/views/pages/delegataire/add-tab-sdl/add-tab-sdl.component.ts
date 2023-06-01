@@ -6,6 +6,9 @@ import Swal from "sweetalert2";
 import { ISuiviSdl } from "../models/sdl/tab-sdl.model";
 import { TabSdlService } from "../service/tab-sdl/tab-sdl.service";
 import { Location } from '@angular/common';
+import {TypeIndicSdlService} from '../../parametrages-sdl-delegataire/service/typeIndicSdl/type-indic-sdl.service';
+import {HttpResponse} from '@angular/common/http';
+import {ITypeIndicSdl} from '../../parametrages-sdl-delegataire/models/typeIndicSdl/typeIndicSdl.model';
 
 @Component({
 	selector: 'kt-add-tab-sdl',
@@ -15,6 +18,8 @@ import { Location } from '@angular/common';
 export class AddTabSdlComponent implements OnInit {
 	formDemandeSubmitted = false;
 	suiviSdls: ISuiviSdl;
+	tabTypeIndicateurSdls?: ITypeIndicSdl[] | null;
+
 
 	// GroupForm suiviSdlForm
 	suiviSdlForm = this.fb.group({
@@ -34,10 +39,19 @@ export class AddTabSdlComponent implements OnInit {
 		private fb: FormBuilder,
 		private suiviSdlService: TabSdlService,
 		private translate: TranslateService,
+		private typeIndicSdlService: TypeIndicSdlService,
 		private  location: Location
 	) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		// get list of types affaire
+		this.typeIndicSdlService.query({ size: 1000 }).subscribe({
+			next: (res: HttpResponse<ITypeIndicSdl[]>) => {
+				this.tabTypeIndicateurSdls =  res.body;
+			},
+			error: () => { },
+		});
+	}
 	Back(): void {
 		this.location.back();
 	}

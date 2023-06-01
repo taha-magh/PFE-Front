@@ -18,14 +18,13 @@
 			<div class="col-md-6">
 				<div class="form-group fv-plugins-icon-container">
 					<mat-form-field class="example-full-width">
-						<label> Type d'indicateur : </label>
-
-						<mat-select matNativeControl class="form-control">
-							<mat-option value="">Type d'indicateur 1</mat-option>
-							<mat-option value="">Type d'indicateur 2</mat-option>
-							<mat-option value="">Type d'indicateur 3</mat-option>
-							<mat-option value="">Type d'indicateur 4</mat-option>
-							<mat-option value="">Type d'indicateur 5</mat-option>
+						<mat-label>
+							{{ "PAGES.DEL_SDL.TYPE_INDIC" | translate }} :
+						</mat-label>
+						<mat-select class="form-control-lg" formControlName="typeIndicateur">
+							<mat-option *ngFor="let typeIndicateur of tabTypeIndicateurDelegataires" [value]="typeIndicateur.id">
+								{{typeIndicateur.libelle}}
+							</mat-option>
 						</mat-select>
 					</mat-form-field>
 					<div class="fv-plugins-message-container"></div>

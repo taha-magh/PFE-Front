@@ -7,6 +7,8 @@ import {TabSdlService} from '../service/tab-sdl/tab-sdl.service';
 import { ISuiviSdl } from "../models/sdl/tab-sdl.model";
 import { HttpResponse } from "@angular/common/http";
 import {Location} from '@angular/common';
+import {ITypeIndicSdl} from '../../parametrages-sdl-delegataire/models/typeIndicSdl/typeIndicSdl.model';
+import {TypeIndicSdlService} from '../../parametrages-sdl-delegataire/service/typeIndicSdl/type-indic-sdl.service';
 @Component({
 	selector: 'kt-upd-tab-sdl',
 	templateUrl: './upd-tab-sdl.component.html',
@@ -16,6 +18,8 @@ export class UpdTabSdlComponent implements OnInit {
 	suiviSdls: ISuiviSdl;
 	formSdlSubmitted = false;
 	tabSuiviSdl?: ISuiviSdl[] | null;
+	tabTypeIndicateurSdls?: ITypeIndicSdl[] | null;
+
 
 	// GroupForm suiviSdlForm
 	suiviSdlForm = this.fb.group({
@@ -34,10 +38,18 @@ export class UpdTabSdlComponent implements OnInit {
 		private suiviSdlService: TabSdlService,
 		private translate: TranslateService,
 		private activatedRoute: ActivatedRoute,
+		private typeIndicSdlService: TypeIndicSdlService,
 		private  location: Location
 	) {}
 
 	ngOnInit() {
+		// get list of types affaire
+		this.typeIndicSdlService.query({ size: 1000 }).subscribe({
+			next: (res: HttpResponse<ITypeIndicSdl[]>) => {
+				this.tabTypeIndicateurSdls =  res.body;
+			},
+			error: () => { },
+		});
 		this.activatedRoute.data.subscribe(({ tabSdl }) => {
 			this.suiviSdlForm.patchValue({ ...tabSdl });
 		});
