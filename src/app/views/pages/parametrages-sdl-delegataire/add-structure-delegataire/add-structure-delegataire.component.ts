@@ -59,7 +59,7 @@ export class AddStructureDelegataireComponent implements OnInit {
 						showConfirmButton: false,
 						timer: 1500,
 					}).then(() => {
-						this.router.navigate(['pages/parametrages-sdl-delegataire/list-structure-delegataire']);
+						this.router.navigate(['pages/parametrage/list-structure-delegataire']);
 						// localStorage.setItem("curentStep", JSON.stringify(1));
 					});
 				}

@@ -59,7 +59,7 @@ export class AddTypeIndicateurSdlComponent implements OnInit {
 						showConfirmButton: false,
 						timer: 1500,
 					}).then(() => {
-						this.router.navigate(['pages/parametrages-sdl-delegataire/list-structure-sdl']);
+						this.router.navigate(['pages/parametrage/list-type-indicateur-sdl']);
 						// localStorage.setItem("curentStep", JSON.stringify(1));
 					});
 				}
