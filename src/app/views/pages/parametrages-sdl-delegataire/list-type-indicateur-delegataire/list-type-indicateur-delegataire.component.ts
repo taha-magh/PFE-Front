@@ -77,7 +77,7 @@ export class ListTypeIndicateurDelegataireComponent implements OnInit {
 		this.router.navigate(['pages/parametrage/add-type-indicateur-delegataire']);
 	}
 	updateTypeIndicDelegataire(id: number): void {
-		this.router.navigate(['pages/parametrage/upd-type-indicateur-delegataire/ +id']);
+		this.router.navigate(['pages/parametrage/upd-type-indicateur-delegataire/' +id]);
 	}
 
 	applyFilter(filterValue: string) {

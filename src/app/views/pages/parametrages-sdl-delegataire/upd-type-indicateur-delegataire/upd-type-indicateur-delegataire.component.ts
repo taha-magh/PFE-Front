@@ -70,7 +70,7 @@ export class UpdTypeIndicateurDelegataireComponent implements OnInit {
 								timer: 1500,
 							}).then((result) => {
 								this.router.navigate([
-									"pages/parametrages-sdl-delegataire/list-type-indicateur-delegataire",
+									"pages/parametrage/list-type-indicateur-delegataire",
 								]);
 							});
 						},

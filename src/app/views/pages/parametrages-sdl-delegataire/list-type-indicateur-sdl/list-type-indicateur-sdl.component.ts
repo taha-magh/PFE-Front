@@ -77,7 +77,7 @@ export class ListTypeIndicateurSdlComponent implements OnInit {
 		this.router.navigate(['pages/parametrage/add-type-indicateur-sdl']);
 	}
 	updateTypeIndicSdl(id: number): void {
-		this.router.navigate(['pages/parametrage/upd-type-indicateur-sdl/ +id']);
+		this.router.navigate(['pages/parametrage/upd-type-indicateur-sdl/' +id]);
 	}
 
 	applyFilter(filterValue: string) {
