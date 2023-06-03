@@ -48,7 +48,7 @@ export const environment = {
 
 
 	/// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-	BACKEND_URL: "http://localhost:8080/",
+	BACKEND_URL: "http://localhost:8082/",
 
 	/*
 	reclamationUrl : 'http://marrakech.jamaati.hvc.ma:9101/gateway/Reclamation/Reclamations/Reclamation/',
